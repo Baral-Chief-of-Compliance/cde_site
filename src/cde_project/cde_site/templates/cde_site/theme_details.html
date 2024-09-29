@@ -1,0 +1,63 @@
+{% extends 'cde_site/base.html' %}
+
+{% load static %}
+
+{% block title %}
+
+    {{ t_name }}
+
+{% endblock %}
+
+
+{% block content %}
+<a href="{% url 'cde_site:index'%}">
+    <div class="back-btn">
+        &larr; Назад
+    </div>
+</a>
+<h1>{{ t_name }} </h1>
+
+<h2>Документы</h2>
+{% if documents %}
+
+<div class="list-blocks">
+    {% for d in documents %}
+        <a target="_blank" href="{{ d.dm_path }}">
+            <div class="theme-block">
+                <div class="theme-block-label">
+                    {{ d.dm_name }}
+                </div>
+                <div class="theme-block-date">
+                    {{ d.dm_date }}
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+</div>
+{% else %}
+    <h3>Документы к этой теме пока отсутствуют...</h3>
+{% endif %}
+
+
+<h2>Информативные изображения</h2>
+
+{% if images %}
+<div class="list-blocks">
+    {% for im in images %}
+        <a href={% url 'cde_site:theme_info_img' t_id im.im_id %}>
+            <div class="theme-block">
+                <div class="theme-block-label">
+                    {{ im.im_name }}
+                </div>
+                <div class="theme-block-date">
+                    {{ im.im_date }}
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+</div>
+{% else %}
+    <h3>Изображения к этой теме пока отсутствуют...</h3>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'cde_site/base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+
+    Главная
+
+{% endblock %}
+
+
+{% block content %}
+    <h1>Темы ГО и ЧС</h1>
+
+    <div class="list-blocks">
+    {% for t in themes %}
+        <a href="{% url 'cde_site:theme_info' t.t_id%}">
+            <div class="theme-block">
+                <div class="theme-block-label">
+                    {{ t.t_name }}
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+    </div>
+
+  
+{% endblock %}

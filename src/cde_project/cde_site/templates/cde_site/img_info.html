@@ -1,0 +1,24 @@
+{% extends 'cde_site/base.html' %}
+
+{% load static %}
+
+{% block title %}
+
+    {{ im_name }}
+
+{% endblock %}
+
+{% block content %}
+<a href="{% url 'cde_site:theme_info' t_id %}">
+    <div class="back-btn">
+        &larr; Назад
+    </div>
+</a>
+<h1>Изображение: {{ im_name }} от {{ im_date }}</h1>
+
+<div class="list-blocks">
+    <img class="img-style" src={{ im_img }}>
+</div>
+
+
+{% endblock %}

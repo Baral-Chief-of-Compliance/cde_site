@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  django-app:
+    build: './src/cde_project'
+    restart: always
+    volumes:
+      - ./src/cde_project/:/home/django-app
+
+    ports:
+      - 8010:8010
+      
+  nginx:
+    build: './nginx'
+    restart: always
+    ports:
+      - 3010:80
+
+    volumes:
+      - ./src/:/home/app/djangoApp
+      - ./eror_pages/:/home/app/error_pages
+    depends_on:
+      - django-app

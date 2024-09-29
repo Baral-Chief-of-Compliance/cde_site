@@ -1,0 +1,24 @@
+{% extends 'cde_site/base.html' %}
+
+{% load static %}
+
+{% block title %}
+
+    {{ dm_name }}
+
+{% endblock %}
+
+{% block content %}
+<a href="{% url 'cde_site:theme_info' t_id %}">
+    <div class="back-btn">
+        &larr; Назад
+    </div>
+</a>
+<h1>Документ: {{ dm_name }} от {{ dm_date }}</h1>
+
+<div class="list-blocks">
+    <embed width="90%" height="60%" src={{ dm_document_path }} type="application/pdf">
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang = "ru">
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>ГО и ЧС База знаний - {% block title %}{% endblock %}</title>
+
+        <meta name="description" content="">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href={% static 'cde_site/main.css'%} type="text/css">
+
+        {% comment %} фавикон {% endcomment %}
+        <link rel="apple-touch-icon" sizes="57x57" href={% static "cde_site/favicon/apple-icon-57x57.png"%}>
+        <link rel="apple-touch-icon" sizes="60x60" href={% static "cde_site/favicon/apple-icon-60x60.png"%}>
+        <link rel="apple-touch-icon" sizes="72x72" href={% static "cde_site/favicon/apple-icon-72x72.png"%}>
+        <link rel="apple-touch-icon" sizes="76x76" href={% static "cde_site/favicon/apple-icon-76x76.png"%}>
+        <link rel="apple-touch-icon" sizes="114x114" href={% static "cde_site/favicon/apple-icon-114x114.png"%}>
+        <link rel="apple-touch-icon" sizes="120x120" href={% static "cde_site/favicon/apple-icon-120x120.png"%}>
+        <link rel="apple-touch-icon" sizes="144x144" href={% static "cde_site/favicon/apple-icon-144x144.png"%}>
+        <link rel="apple-touch-icon" sizes="152x152" href={% static "cde_site/favicon/apple-icon-152x152.png"%}>
+        <link rel="apple-touch-icon" sizes="180x180" href={% static "cde_site/favicon/apple-icon-180x180.png"%}>
+        <link rel="icon" type="image/png" sizes="192x192"  href={% static "cde_site/favicon/android-icon-192x192.png"%}>
+        <link rel="icon" type="image/png" sizes="32x32" href={% static "cde_site/favicon/favicon-32x32.png"%}>
+        <link rel="icon" type="image/png" sizes="96x96" href={% static "cde_site/favicon/favicon-96x96.png"%}>
+        <link rel="icon" type="image/png" sizes="16x16" href={% static "cde_site/favicon/favicon-16x16.png"%}>
+        <link rel="manifest" href={% static "cde_site/favicon/manifest.json"%}>
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content={% static "cde_site/favicon/ms-icon-144x144.png"%}>
+        <meta name="theme-color" content="#ffffff">
+        {% comment %} конец фавикона {% endcomment %}
+
+    </head>
+
+    {% comment %} навигационная панель {% endcomment %}
+    <nav>
+        <div class="firs-part-nav">
+        
+        </div>
+
+        <div class="second-part-nav">
+            {% comment %} <div class="nav-logo">
+                <img class="nav-logo-img" src={% static 'cde_site/materials/51.png'%}>
+            </div> {% endcomment %}
+
+            <div class="nav-label">
+                Учебные материалы по ГО и ЧС
+            </div>
+
+            <div class="nav-links">
+
+            </div>
+        </div>
+    </nav>
+
+    <body>
+        {% block content %}
+        {% endblock %}
+    
+        <script src="" async defer></script>
+    </body>
+
+</html>
